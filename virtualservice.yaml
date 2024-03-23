@@ -10,3 +10,5 @@ spec:
   - route:
     - destination:
         host: gogs.gogs.svc.cluster.local
+        port:
+          number: 80
