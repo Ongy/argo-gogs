@@ -30,10 +30,12 @@ spec:
           containerPort: 3000
         - name: ssh
           protocol: TCP
-          containerPort: 22
+          containerPort: 7022
 
         readinessProbe:
           httpGet:
             path: /
             port: http
+          tcpsocket:
+            port: ssh
 
