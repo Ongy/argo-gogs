@@ -13,7 +13,7 @@ spec:
       labels:
         app: gogs-ssh-proxy
     spec:
-      dnsPolicy: ClusterFirstWithoutHostNet
+      dnsPolicy: ClusterFirstWithHostNet
       hostNetwork: true
       containers:
       - image: alpine/socat
