@@ -20,4 +20,4 @@ spec:
         name: ssh-proxy
         args:
         - TCP6-listen:7022,reuseaddr,fork
-        - TCP:gogs:7022
+        - TCP:gogs:22
