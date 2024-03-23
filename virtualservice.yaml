@@ -1,0 +1,12 @@
+apiVersion: networking.istio.io/v11beta1
+kind: VirtualService
+metadata:
+  name: gogs
+  namespace: default
+spec:
+  gateways: [istio-system/gateway]
+  hosts: [git.local.ongy.net]
+  http:
+  - route:
+    - destination:
+        host: gogs.gogs.svc.cluster.local
