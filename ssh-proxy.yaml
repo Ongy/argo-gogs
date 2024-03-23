@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    app: gogs-ssh-proxy
+  name: gogs-ssh-proxy
+spec:
+  selector:
+    matchLabels:
+      app: gogs-ssh-proxy
+  template:
+    metadata:
+      labels:
+        app: gogs-ssh-proxy
+    spec:
+      dnsPolicy: ClusterFirstWithoutHostNet
+      hostNetwork: true
+      containers:
+      - image: alpine/socat
+        name: ssh-proxy
+        args:
+        - TCP6-listen:7022,reuseaddr,fork
+        - TCP:gogs:7022
