@@ -32,3 +32,8 @@ spec:
           protocol: TCP
           containerPort: 22
 
+        readinessProbe:
+          httpGet:
+            path: /
+            port: http
+
