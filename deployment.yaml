@@ -12,9 +12,18 @@ spec:
       labels:
         app: gogs
     spec:
+      volumes:
+      - name: data
+        nfs:
+          path: /srv/share/backed/appdata/gogs/
+          server: mario.local.ongy.net
+          readOnly: false
       containers:
       - image: gogs/gogs
         name: server
+        volumeMounts:
+        - name: data
+          path: /data
         ports:
         - name: http
           protocol: TCP
