@@ -23,7 +23,7 @@ spec:
         name: server
         volumeMounts:
         - name: data
-          path: /data
+          mountPath: /data
         ports:
         - name: http
           protocol: TCP
